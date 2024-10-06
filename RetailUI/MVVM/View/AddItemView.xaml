@@ -1,0 +1,96 @@
+﻿
+<UserControl x:Class="RetailUI.MVVM.View.AddItemView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:RetailUI.MVVM.View"
+             xmlns:vm="clr-namespace:RetailUI.MVVM.ViewModel"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+
+    <UserControl.DataContext>
+        <vm:AddItemViewModel/>
+    </UserControl.DataContext>
+
+    <Grid Background="White" Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Title Bar -->
+        <Border Grid.Row="0" Background="White" Padding="10">
+            <TextBlock Text="ADD NEW ITEM" 
+                       FontSize="36" 
+                       FontWeight="Bold" 
+                       Foreground="Blue" 
+                       VerticalAlignment="Center" 
+                       HorizontalAlignment="Center"/>
+        </Border>
+
+        <!-- The Form Section -->
+        <Grid Grid.Row="2" Background="White" Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="111*" />
+                <ColumnDefinition Width="16*" />
+                <ColumnDefinition Width="22*"/>
+                <ColumnDefinition Width="0*"/>
+                <ColumnDefinition Width="221*" />
+                <ColumnDefinition Width="74*" />
+                <ColumnDefinition Width="111*" />
+                <ColumnDefinition Width="185*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <!-- Row 1: Description and Colour -->
+            <Label Grid.Row="0" Grid.Column="0" Content="Description:" Foreground="Blue" FontWeight="Bold" Margin="10,10,10,10" FontSize="16"/>
+            <TextBox Grid.Row="0" Grid.Column="4" Margin="10,10,10,10" Text="{Binding Description, UpdateSourceTrigger=PropertyChanged}" FontSize="16"/>
+
+            <Label Grid.Row="0" Grid.Column="6" Content="Colour:" Foreground="Blue" FontWeight="Bold" Margin="10,10,10,10" FontSize="16"/>
+            <TextBox Grid.Row="0" Grid.Column="7" Margin="10,10,10,10" Text="{Binding Colour, UpdateSourceTrigger=PropertyChanged}" FontSize="16"/>
+
+            <!-- Row 2: Size and CATL1_ID -->
+            <Label Grid.Row="1" Grid.Column="0" Content="Size:" Foreground="Blue" FontWeight="Bold" Margin="10,10,10,10" FontSize="16"/>
+            <TextBox Grid.Row="1" Grid.Column="4" Margin="10,10,10,10" Text="{Binding Size, UpdateSourceTrigger=PropertyChanged}" FontSize="16"/>
+
+            <Label Grid.Row="1" Grid.Column="6" Content="CATL1_ID:" Foreground="Blue" FontWeight="Bold" Margin="10,10,10,10" FontSize="16"/>
+            <TextBox Grid.Row="1" Grid.Column="7" Margin="10,10,10,10" Text="{Binding CategoryA, UpdateSourceTrigger=PropertyChanged}" FontSize="16"/>
+
+            <!-- Row 3: CATL2_ID and CATL3_ID -->
+            <Label Grid.Row="2" Grid.Column="0" Content="CATL2_ID:" Foreground="Blue" FontWeight="Bold" Margin="10,10,10,10" FontSize="16"/>
+            <TextBox Grid.Row="2" Grid.Column="4" Margin="10,10,10,10" Text="{Binding CategoryB, UpdateSourceTrigger=PropertyChanged}" FontSize="16"/>
+
+            <Label Grid.Row="2" Grid.Column="6" Content="CATL3_ID:" Foreground="Blue" FontWeight="Bold" Margin="10,10,10,10" FontSize="16"/>
+            <TextBox Grid.Row="2" Grid.Column="7" Margin="10,10,10,10" Text="{Binding CategoryC, UpdateSourceTrigger=PropertyChanged}" FontSize="16"/>
+
+            <!-- Row 4: RACK_ID -->
+            <Label Grid.Row="3" Grid.Column="0" Content="RACK_ID:" Foreground="Blue" FontWeight="Bold" Margin="10,10,10,10" FontSize="16"/>
+            <TextBox Grid.Row="3" Grid.Column="4" Margin="10,10,10,10" Text="{Binding RackId, UpdateSourceTrigger=PropertyChanged}" FontSize="16"/>
+
+            <Label Grid.Row="3" Grid.Column="6" Content="Item Id:" Foreground="Blue" FontWeight="Bold" Margin="10,10,10,10" FontSize="16"/>
+            <TextBox Grid.Row="3" Grid.Column="7" Margin="10,10,10,10" Text="{Binding ItemId, UpdateSourceTrigger=PropertyChanged}" FontSize="16"/>
+
+            <!-- Submit Button -->
+            <Button Grid.Row="7" Grid.Column="7" Content="Submit" Width="100" Height="40" 
+                HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0"
+                Background="Blue" Foreground="White" FontWeight="Bold" FontSize="16"
+                Click="SubmitButton_Click"/>
+
+
+        </Grid>
+    </Grid>
+</UserControl>
+
+
+
