@@ -71,3 +71,7 @@ Build the solution to restore the NuGet packages.
 Run the application:
 Set the RetailUI project as the startup project.
 Press F5 or the "Start" button to run the application.
+
+--------------------------------------------------------------------------------
+
+
